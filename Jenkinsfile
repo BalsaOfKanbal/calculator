@@ -6,14 +6,14 @@ pipeline {
         stage("Set up machine") {
             steps {
                 sh """
-                    pip install pytest
+                    pip3 install pytest
                 """
             }
         }
         stage('Test code') {
             steps {
                 sh """
-                    python -m pytest
+                    python3 -m pytest
                 """
             }
         }
@@ -21,7 +21,7 @@ pipeline {
     post {
         always {
             sh """
-                pip uninstall pytest -y
+                pip3 uninstall pytest -y
             """
         }
     }
