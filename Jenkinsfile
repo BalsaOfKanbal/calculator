@@ -21,7 +21,7 @@ pipeline {
     post {
         always {
             sh """
-                pip uninstall pytest
+                pip uninstall pytest -y
             """
         }
     }
